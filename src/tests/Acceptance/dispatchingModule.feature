@@ -7,5 +7,5 @@ Feature: dispatchingModule
     Given I am on the login page
     When I fill in Email-Address with "cr" shortName
     And I fill in Password with "test"
-    And I click Login button
+    Then I click Login button
     And I click on the Dispatching link
