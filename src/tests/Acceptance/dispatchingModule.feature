@@ -9,3 +9,6 @@ Feature: dispatchingModule
     And I fill in Password with "test"
     And I click Login button
     And I click on the Dispatching link
+    Then I should see Disposition Tab
+    When I click on Logout
+    Then I should see Logout Text

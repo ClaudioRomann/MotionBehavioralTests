@@ -8,6 +8,8 @@ use Codeception\Attribute\Given;
 use Codeception\Attribute\When;
 use Codeception\Attribute\Then;
 
+use function PHPUnit\Framework\assertEquals;
+
 /**
  * Inherited Methods
  * @method void wantTo($text)
@@ -76,5 +78,34 @@ class AcceptanceTester extends \Codeception\Actor
     {
         $this->click('div.ws-component-item:nth-child(1) > div:nth-child(1) > div:nth-child(3)');
     }
+
+    /**
+     * @Then I should see Disposition Tab
+     */
+    public function iShouldSeeDispositionTab()
+    {
+        $this->waitForElementVisible('/html/body/div[3]/div[1]/div[1]/div[2]/div/a[2]/span[1]/span/span[1]', 10);
+        $text = $this->grabTextFrom('/html/body/div[3]/div[1]/div[1]/div[2]/div/a[2]/span[1]/span/span[1]', 10);
+        assertEquals('Disposition', $text);
+    }
+
+    /**
+     * @When  I click on Logout
+     */
+    public function iClickOnLogout()
+    {
+        $this->click('/html/body/div[1]/div/div/div/div/div/div/a[2]/span/span/span[1]');
+    }
+
+    /**
+     * @Then I should see Logout Text
+     */
+    public function iShouldSeeLogoutText()
+    {
+        $this->waitForElementVisible('/html/body/div/b/big', 10);
+        $this->see('Vielen Dank dass Sie DiLoc|Motion getestet haben!', '/html/body/div/b/big');
+    }
+
+
 
 }

@@ -8,10 +8,19 @@ modules:
     enabled:
         - WebDriver:
             url: http://localhost:8080
+#            url: http://host.docker.internal:8080 # Use this url if you want to run into the container
             host: '127.0.0.1'
             port: 4444
             browser: chrome
             wd_url: 'http://127.0.0.1:4444/wd/hub'
+            capabilities:
+                goog:chromeOptions:
+                    args: [
+ #                       "--headless",
+                        "--no-sandbox",
+                        "--disable-dev-shm-usage",
+                        "--disable-gpu"
+                    ]
             window_size: false # or specify a size like '1024x768'
         - \Tests\Support\Helper\Acceptance
     gherkin:

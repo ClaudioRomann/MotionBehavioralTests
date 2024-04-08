@@ -1,8 +1,26 @@
 # Project Setup Guide
 
 This document provides a step-by-step guide to setting up your development environment for our PHP project. Please follow the instructions carefully to ensure a smooth setup process.
+## Setup Test on Docker
+### Build Docker
+To start just execute
 
-## Prerequisites
+```bash
+make build-image
+```
+
+### Execute Test on Docker
+Execute:
+```bash
+make bash
+```
+In Docker Container run:
+
+```bash
+php vendor/bin/codecept run Acceptance
+```
+
+## Prerequisites to run Test with Browser
 
 Before you begin, ensure that you have the following installed on your system:
 
