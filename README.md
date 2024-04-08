@@ -91,6 +91,11 @@ chromedriver --port=4444 --url-base=wd/hub
 ```
 
 ### Third Step
+Change your User and Password on ``` src/tests/Acceptance/dispatchingModule.feature ```
+
+![](gherkingTest.png)
+
+### Fourth Step
 Open a new Terminal window or tab and execute the following command:
 ```bash
 php vendor/bin/codecept run Acceptance
