@@ -6,4 +6,4 @@ services:
     ports:
       - "8090:80"
     volumes:
-      - ./src:/var/www/html
+      - ./src:/var/www/App
