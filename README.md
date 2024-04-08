@@ -14,8 +14,14 @@ Execute:
 ```bash
 make bash
 ```
-In Docker Container run:
+In Docker Container:
 
+Open a new Terminal window or tab and execute the following command:
+```bash
+chromedriver --port=4444 --url-base=wd/hub
+```
+
+Open a new Terminal window or tab and execute the following command:
 ```bash
 php vendor/bin/codecept run Acceptance
 ```
